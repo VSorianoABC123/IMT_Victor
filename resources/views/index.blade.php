@@ -7,8 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.blade.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 </head>
-<body>
+<body class="bodyStyle">
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -20,7 +21,7 @@
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Features</a>
@@ -47,15 +48,15 @@
 
     <main class="row">
 
+        {{-- Sidebar --}}
 
-
-    <aside id="sidebar" class="col-1" >
+    <aside id="sidebar" class="d-none col-lg-1 d-lg-block" >
     <div>
-
-        <button id="tancarSidebar" class="btn btn-primary active m-1 position-relative start-50" aria-current="page"><</button>
+        <hr>
+        {{--<button id="tancarSidebar" class="btn btn-primary active m-1 position-relative start-50" aria-current="page"><</button> --}}
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+            <a href="#sobremi" class="nav-link active" aria-current="page">
               Sobre mi
             </a>
           </li>
@@ -79,33 +80,75 @@
 
     </aside>
 
-    <section class="col-11">
-        <!-----------------CARROUSEL---------------->
-        <h1 class="offset-md-5">HOLA</h1>
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{{url('img/Captura1.png')}}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{{url('img/Captura2.png')}}" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="{{url('img/Captura3.png')}}" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+    {{-- Principal --}}
 
-        <div class= "mt-5">
-            absagikbagksajgbsakgsabaskjgasbksabga
+    <section class="d-xs-12 col-lg-11 bodyStyle" >
+
+        <div class="text-align-center">
+            {{-- Fuente: https://es.vecteezy.com/arte-vectorial/305090-fondo-verde-vector --}}
+            <a href= "#sobremi">
+                <img src="{{ url('img/green-vector-background.webp') }}" style="width: 100%;"> </a>
+
+        </div>
+
+        <div class= "mt-5 row" id="sobremi">
+
+            <div class="col-xs-12 col-lg-7 border-end border-dark">
+                <h1>Sobre mí</h1>
+                <div style="text-align: center">
+
+                    <p class="d-block">Pacient, cuidadós i flexible, el món de la informática m'ha interessat desde petit. </p>
+
+                    <p class="d-block">He treballat amb diversos framework com... </p>
+
+                    <div class="row">
+
+
+                    <div class="col-4">
+
+                        <img class= "d-block" src="{{ url('img/angular.png') }}" style="width: 100%;">
+
+                        <p class="d-block p-2">Angular</p>
+
+                    </div>
+                    <div class="col-4">
+
+                        <img class= "d-block" src="{{ url('img/laravel.png') }}" style="width: 100%;">
+
+                        <p class="d-block p-2">Laravel</p>
+
+                    </div>
+                    <div class="col-4">
+
+                        <img class= "d-block" src="{{ url('img/vue.webp') }}" style="width: 100%;">
+
+                        <p class="d-block p-2">Vue</p>
+
+                    </div>
+                    </div>
+
+
+                    <p class="d-block">Amb els que m'he pogut desenvolupar, tant en front-end com en back-end. </p>
+                    <p class="d-block">Em considero bastant versátil, ja que em puc adaptar a lo que necessiti l'equip per a que avançin els projectes. </p>
+
+                    <p class="d-block">També he treballat en diverses eines molt importants per a ser un expert en llengüatge de marques. </p>
+                    <p class= "d-block"> HTML, CSS i JavaScript, ademés de Bootstrap per a combinar-les. </p>
+
+                    <img class= "d-block" src="{{ url('img/bootstrap.png') }}" style="width: 100%;">
+                </div>
+            </div>
+            <div class="col-xs-12 col-lg-2">
+                <img class= "d-none d-lg-block" src="{{ url('img/captura1.png') }}" style="width: 100%;">
+
+                <img class= "d-block d-lg-none" src="{{ url('img/captura2.png') }}" style="width: 100%;">
+
+
+
+                {{--
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
+                  </div> --}}
+            </div>
 
         </div>
         <div class= "mt-5">
@@ -206,7 +249,7 @@
     <script>
 
 
-        let boto = document.getElementById("tancarSidebar");
+        /* let boto = document.getElementById("tancarSidebar");
 
         boto.addEventListener("click",function(){
 
@@ -217,7 +260,7 @@
             document.getElementById("sidebar").classList.add("col-0");
 
 
-        }, false);
+        }, false); */
 
 
     </script>
