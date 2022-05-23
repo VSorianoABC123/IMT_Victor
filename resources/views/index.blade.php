@@ -12,41 +12,30 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 </head>
 
-<body class="bodyStyle">
+<body class="bodyStyle" style="font-family: barlow">
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown link
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
+        <nav class="navbar navbar-expand-lg" style="background-color: rgb(156, 185, 144)">
+            <div class="d-flex container justify-content-lg-around justify-content-center">
+                <h5 class="navbar-brand" class="d-none col-lg-1 d-lg-block ">Desenvolupador web</h5>
+            </div>
+            <div class="d-flex container justify-content-lg-around justify-content-center">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="border-color:black; background-color: #d6bda9">
+                        {{ Config::get('languages')[App::getLocale()] }}
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    @foreach (Config::get('languages') as $lang => $language)
+                        @if ($lang != App::getLocale())
+                            <li> <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a></li>
+                        @endif
+                    @endforeach
                     </ul>
                 </div>
+
+
+
+
             </div>
         </nav>
 
@@ -56,70 +45,70 @@
 
         {{-- Sidebar --}}
 
-        <aside id="sidebar" class="d-none col-lg-1 d-lg-block">
-            <div>
+        <div id="sidebar" class="col-lg-1 d-lg-block d-none" >
+            <div class="sticky-top">
                 <hr>
                 {{-- <button id="tancarSidebar" class="btn btn-primary active m-1 position-relative start-50" aria-current="page"><</button> --}}
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="#sobremi" class="nav-link active" aria-current="page">
+                        <a href="#sobremi" class="nav-link opcionsSidebar active" aria-current="page">
                             Sobre mi
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link link-dark">
+                        <a href="#elsmeusprojectes" class="nav-link opcionsSidebar link-dark">
                             Els meus projectes
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link link-dark">
+                        <a href="#altreshabilitats" class="nav-link opcionsSidebar link-dark">
                             Altres habilitats
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link link-dark">
+                        <a href="#contacte" class="nav-link opcionsSidebar link-dark">
                             Contacte
                         </a>
                     </li>
                 </ul>
             </div>
 
-        </aside>
+        </div>
 
         {{-- Principal --}}
 
-        <section class="d-xs-12 col-lg-11 bodyStyle">
+        <div class="d-xs-12 col-lg-11">
 
-            <div class="text-align-center">
+            <div class="col-12 text-align-center">
                 {{-- Fuente: https://es.vecteezy.com/arte-vectorial/305090-fondo-verde-vector --}}
                 <a href="#sobremi">
                     <img src="{{ url('img/green-vector-background.webp') }}" style="width: 100%;"> </a>
 
             </div>
 
-            <div class="mt-5 row" id="sobremi">
+            <div class="row" id="sobremi">
 
                 <div class="col-xs-12 col-lg-8">
-                    <h1>Sobre mí</h1>
+                    <h1 class="my-3">Sobre mí</h1>
                     <div style="text-align: center">
 
                         <div id="accordion">
                             <div class="card">
                                 <div class="card-header" style="background-color: #d6bda9">
                                     <a class="btn " data-bs-toggle="collapse" href="#collapseOne">
-                                        Soft skills
+                                        <b>Soft skills</b>
                                     </a>
                                 </div>
                                 <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
                                     <div class="card-body" style="background-color: #e0fdd5">
-                                      <p class="d-block">Pacient, cuidadós i flexible, el món de la informática
-                                        m'ha interessat desde petit. </p>
+                                      <p class="">Pacient, cuidadós i flexible, <b>el món de la informática
+                                        m'ha interessat desde petit.</b> </p>
 
-                                        <img class="d-block" src="{{ url('img/softskills.webp') }}"
+                                        <img class="" src="{{ url('img/softskills.webp') }}"
                                                     style="width: 100%;">
 
 
-                                    <p class="d-block">Em considero bastant versátil, ja que em puc adaptar a
+                                    <p class="">Em <b>considero bastant versátil</b>, ja que em puc adaptar a
                                         lo que necessiti l'equip per a que avançin els projectes. </p>
 
                                     </div>
@@ -129,53 +118,55 @@
                             <div class="card">
                                 <div class="card-header" style="background-color: #d4ad8c">
                                     <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
-                                        Hard skills
+                                        <b>Hard skills</b>
                                     </a>
                                 </div>
                                 <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
                                     <div class="card-body" style="background-color: #c2e2b5">
 
-                                        <p class="d-block">He treballat amb diversos framework com... </p>
+                                        <p class="">He treballat amb diversos framework com... </p>
 
                                         <div class="row">
 
 
                                             <div class="col-4">
 
-                                                <img class="d-block" src="{{ url('img/angular.png') }}"
-                                                    style="width: 100%;">
+                                                <img class="" src="{{ url('img/angular.png') }}"
+                                                    style="width: 50%;">
 
-                                                <p class="d-block p-2">Angular</p>
-
-                                            </div>
-                                            <div class="col-4">
-
-                                                <img class="d-block" src="{{ url('img/laravel.png') }}"
-                                                    style="width: 100%;">
-
-                                                <p class="d-block p-2">Laravel</p>
+                                                <p class=" p-2">Angular</p>
 
                                             </div>
                                             <div class="col-4">
 
-                                                <img class="d-block" src="{{ url('img/vue.webp') }}"
-                                                    style="width: 100%;">
+                                                <img class="" src="{{ url('img/laravel.png') }}"
+                                                    style="width: 50%;">
 
-                                                <p class="d-block p-2">Vue</p>
+                                                <p class=" p-2">Laravel</p>
+
+                                            </div>
+                                            <div class="col-4">
+
+                                                <img class="" src="{{ url('img/vue.webp') }}"
+                                                    style="width: 50%;">
+
+                                                <p class=" p-2">Vue</p>
 
                                             </div>
                                         </div>
 
 
-                                        <p class="d-block">Amb els que m'he pogut desenvolupar, tant en front-end
-                                            com en back-end. </p>
-                                        <p class="d-block">També he treballat en diverses eines molt importants
-                                            per a ser un expert en llengüatge de marques. </p>
-                                        <p class="d-block"> HTML, CSS i JavaScript, ademés de Bootstrap per a
-                                            combinar-les. </p>
+                                        <p class="">Amb els que m'he pogut desenvolupar, <b>tant en front-end
+                                            com en back-end. </b></p>
+                                        <p class="">També he treballat en diverses eines molt importants
+                                            per a ser <b>un expert en llengüatge de marques.</b> </p>
+                                        <p class=""> HTML, CSS i JavaScript, <b>ademés de Bootstrap per a
+                                            complementar-les. </b></p>
 
-                                        <img class="d-block" src="{{ url('img/bootstrap.png') }}"
-                                            style="width: 100%;">
+                                        <img class="" src="{{ url('img/bootstrap.png') }}"
+                                            style="width: 60%;">
+
+                                            <p class="mt-5">En quant a bases de dades, tinc pràctica en <b> l'us de MySQL.</b></p>
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +180,7 @@
                 <div class="col-xs-12 col-lg-1">
                     <img class="d-none d-lg-block" src="{{ url('img/captura1.png') }}">
 
-                    <img class="d-block d-lg-none" src="{{ url('img/captura2.png') }}" style="width: 100%;">
+                    <img class=" d-lg-none" src="{{ url('img/captura2.png') }}" style="width: 100%;">
 
 
 
@@ -199,107 +190,103 @@
                 </div>
 
             </div>
-            <div class="mt-5">
+            <div id="elsmeusprojectes">
 
-                <h1>Els meus projectes</h1>
-                <div class="row mt-5 col-xs-12 col-lg-11" style="text-align: center">
+                <h1 class="my-3">Els meus projectes</h1>
+
+                <div class="row d-flex justify-content-center">
+
+                <div class="col-xs-12 col-lg-4" style="text-align: center">
+                    <img id="projecte1" src="{{ url('img/Grabacio1.jpg') }}"
+                            style="width:80%;">
+
+                        <p class="px-5"><b>Projecte de simulació de trucades de emergéncia al 112 per el institut Moisés Broggi.</b></p>
 
 
-                    <div class="col-xs-12 col-lg-4">
+                </div>
+                <div class="col-xs-12 col-lg-4" style="text-align: center">
+                    <img id="projecte2"  src="{{ url('img/Grabacio2.jpg') }}"
+                            style="width: 80%;">
 
-                        <img id="projecte1" class="d-block" src="{{ url('img/Grabacio1.jpg') }}"
-                            style="width: 100%;">
+                        <p class="px-5"><b>Projecte per a la introducció de la pàgina de portes obertes del Centre d'Estudis Politécnics.</b></p>
 
-                        <p class="d-block p-2">Projecte de simulació de trucades de emergéncia al 112 per el institut Moisés Broggi.</p>
 
-                    </div>
-                    <div class="col-xs-12 col-lg-4 ">
+                </div>
+                <div class="col-xs-12 col-lg-4" style="text-align: center">
+                    <img id="projecte3" src="{{ url('img/Grabacio3.jpg') }}"
+                            style="width: 80%;">
 
-                        <img id="projecte2" class="d-block" src="{{ url('img/Grabacio2.jpg') }}"
-                            style="width: 100%;">
+                        <p class="px-5" ><b>Minijoc com a part del storytelling del transcurs d'un curs al Centre d'Estudis Politécnics</b></p>
 
-                        <p class="d-block p-2">Projecte per a la introducció de la pàgina de portes obertes del Centre d'Estudis Politécnics.</p>
 
-                    </div>
-                    <div class="col-xs-12 col-lg-4 ">
-
-                        <img id="projecte3" class="d-block " src="{{ url('img/Grabacio3.jpg') }}"
-                            style="width: 100%;">
-
-                        <p class="d-block p-2">Minijoc com a part del storytelling del transcurs d'un curs al Centre d'Estudis Politécnics.</p>
-
-                    </div>
+                </div>
                 </div>
 
             </div>
-            <div class="mt-5">
+            <div class="" id="altreshabilitats">
 
-                <h1>Altres habilitats</h1>
-                <div class="row mt-5 col-xs-12 col-lg-11" style="text-align: center">
+                <h1 class="my-3">Altres habilitats</h1>
+                {{--
+                <div class="d-flex justify-content-center ">
+                    <video autoplay controls style="width: 50%; height: auto;">
+                    <source src="{{ url('img/Proyecto.mp4') }}" type="video/mp4">
+                    Tu navegador no soporta el video.
+                    </video>
 
 
-                    <div class="col-xs-12 col-lg-4">
 
-                        <img id="projecte1" class="d-block" src="{{ url('img/Grabacio1.jpg') }}"
-                            style="width: 100%;">
+                </div> --}}
 
-                        <p class="d-block p-2">Projecte de simulació de trucades de emergéncia al 112 per el institut Moisés Broggi.</p>
 
-                    </div>
-                    <div class="col-xs-12 col-lg-4 ">
-
-                        <img id="projecte2" class="d-block" src="{{ url('img/Grabacio2.jpg') }}"
-                            style="width: 100%;">
-
-                        <p class="d-block p-2">Projecte per a la introducció de la pàgina de portes obertes del Centre d'Estudis Politécnics.</p>
-
-                    </div>
-                    <div class="col-xs-12 col-lg-4 ">
-
-                        <img id="projecte3" class="d-block " src="{{ url('img/Grabacio3.jpg') }}"
-                            style="width: 100%;">
-
-                        <p class="d-block p-2">Minijoc com a part del storytelling del transcurs d'un curs al Centre d'Estudis Politécnics.</p>
-
-                    </div>
+                <div class=" d-flex justify-content-center my-2">
+                    <video style="height: auto; width:80%;" id="video">
+                    <source src="{{ url('img/Proyecto.mp4') }}"  type="video/mp4">
+                    Tu navegador no soporta el video.
+                    </video>
+                </div>
+                <div class=" d-flex justify-content-center my-2">
+                    <nav>
+                        <input type="button" class="videobuttons" id="restart" value="&#8634;">
+                        <input type="button" class="videobuttons" id="backward" value="&laquo;">
+                        <input type="button" class="videobuttons" id="play" value="&#9658;">
+                        <input type="button" class="videobuttons" id="forward" value="&raquo;">
+                        <input type="button" class="videobuttons" id="changevolume" value="&#128263;">
+                    </nav>
                 </div>
 
             </div>
-            <div class="mt-5">
+            <div class="" id="contacte">
 
-                <h1>Contacte</h1>
-                <div class="row mt-5 col-xs-12 col-lg-11" style="text-align: center">
+                <h1 class="my-3">Contacte</h1>
+                <div class="row  col-xs-12 col-lg-11" style="text-align: center">
 
 
-                    <div class="col-xs-12 col-lg-4">
 
-                        <img id="projecte1" class="d-block" src="{{ url('img/Grabacio1.jpg') }}"
-                            style="width: 100%;">
+                    <div class="col-xs-12 col-lg-6" >
+                        <a href="https://www.linkedin.com/in/victor-soriano-calder%C3%B3n-0a22a6229">
 
-                        <p class="d-block p-2">Projecte de simulació de trucades de emergéncia al 112 per el institut Moisés Broggi.</p>
+                        <img id="projecte1" src="{{ url('img/linkedin.png') }}"
+                            style="width: 50%;">
 
+                        <p class=" p-2">LinkedIn</p>
+
+                        </a>
                     </div>
-                    <div class="col-xs-12 col-lg-4 ">
+                    <div class="col-xs-12 col-lg-6 ">
+                        <a href="https://github.com/VSorianoABC123">
 
-                        <img id="projecte2" class="d-block" src="{{ url('img/Grabacio2.jpg') }}"
-                            style="width: 100%;">
+                        <img id="projecte2" src="{{ url('img/github.png') }}"
+                            style="width: 50%;">
 
-                        <p class="d-block p-2">Projecte per a la introducció de la pàgina de portes obertes del Centre d'Estudis Politécnics.</p>
+                        <p class=" p-2">GitHub</p>
 
-                    </div>
-                    <div class="col-xs-12 col-lg-4 ">
-
-                        <img id="projecte3" class="d-block " src="{{ url('img/Grabacio3.jpg') }}"
-                            style="width: 100%;">
-
-                        <p class="d-block p-2">Minijoc com a part del storytelling del transcurs d'un curs al Centre d'Estudis Politécnics.</p>
-
+                        </a>
                     </div>
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
     </main>
 
@@ -314,6 +301,9 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 <script>
+
+
+// Hover al pasar per damunt de l'imatge es reprodueix el gif, i al sortir retorna a la seva posicio original.
 
 
     let projecte1 = document.getElementById("projecte1");
@@ -351,6 +341,124 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
     projecte3.src="{{ url('img/Grabacio3.jpg') }}";
     }
   , false);
+
+
+
+  //Funcionalitat de la sidebar.
+
+  let opcionsSidebar = document.getElementsByClassName("opcionsSidebar");
+
+  for (var i= 0; i< opcionsSidebar.length; i++){
+
+
+
+        opcionsSidebar[i].addEventListener("click", function(){
+
+            for (var i2= 0; i2<opcionsSidebar.length; i2++){
+                opcionsSidebar[i2].classList.add("link-dark");
+                opcionsSidebar[i2].classList.remove("active");
+
+            }
+
+            this.classList.add("active");
+            this.classList.remove("link-dark");
+        })
+
+
+
+    }
+
+
+
+    //Funcionalitat del video
+
+    function actionPlay()
+{
+	if(!video.paused && !video.ended)
+	{
+		video.pause();
+		play.value='\u25BA'; //\u25BA
+	}
+	else
+	{
+		video.play();
+		play.value='||';
+	}
+}
+function actionRestart()
+{
+    video.currentTime = 0;
+    video.pause();
+}
+function actionBackward()
+{
+	video.currentTime = video.currentTime - 10;
+}
+function actionForward()
+{
+    video.currentTime = video.currentTime + 10;
+}
+function actionChangeVolume()
+{
+	video.muted = !video.muted;
+
+    if(video.muted)
+	{
+        // 	Para seleccionar un icono, ir a esta pagina https://www.fileformat.info/info/unicode/char/25ba/index.htm y copiar el codigo de "C/C++/Java source code"
+		changevolume.value= '\uD83D\uDD09'; //\u25BA
+	}
+	else
+	{
+		changevolume.value='\uD83D\uDD07'; //\u25BA
+	}
+
+    /*
+
+
+                        <input type="button" class="videobuttons" id="restart" value="&#8634;">
+                        <input type="button" class="videobuttons" id="backward" value="&laquo;">
+                        <input type="button" class="videobuttons" id="play" value="&#9658;">
+                        <input type="button" class="videobuttons" id="forward" value="&raquo;">
+                        <input type="button" class="videobuttons" id="changevolume" value="&#128263;">
+
+    */
+
+
+
+}
+
+	video=document.getElementById('video');
+	play=document.getElementById('play');
+	restart=document.getElementById('restart');
+	backward=document.getElementById('backward');
+	forward=document.getElementById('forward');
+	changevolume=document.getElementById('changevolume');
+
+
+	video.addEventListener('click', actionPlay);
+	play.addEventListener('click', actionPlay);
+	restart.addEventListener('click', actionRestart);
+	backward.addEventListener('click', actionBackward);
+	forward.addEventListener('click', actionForward);
+	changevolume.addEventListener('click', actionChangeVolume);
+
+    /* function progressLoop() {
+        setInterval(function () {
+            var tiempoTotal;
+            progress.value = Math.round((video.currentTime / video.duration) * 100);
+            timer.innerHTML = progress.value + " %";
+
+            if (progress.value < 74) {
+                document.getElementById("tiempo").style.color = "white";
+            }
+            if (progress.value >= 75) {
+                document.getElementById("tiempo").style.color = "#DC3545";
+            }
+
+
+        });
+    }
+    video.addEventListener("play", progressLoop); */
 
 
 
