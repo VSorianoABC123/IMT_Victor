@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar navbar-expand-lg" style="background-color: rgb(156, 185, 144)">
             <div class="d-flex container justify-content-lg-around justify-content-center">
-                <h5 class="navbar-brand" class="d-none col-lg-1 d-lg-block ">Desenvolupador web</h5>
+                <h5 class="navbar-brand" class="d-none col-lg-1 d-lg-block ">{{__('messages.desenvolupadorweb')}}</h5>
             </div>
             <div class="d-flex container justify-content-lg-around justify-content-center">
                 <div class="dropdown">
@@ -41,6 +41,7 @@
 
     </header>
 
+
     <main class="row">
 
         {{-- Sidebar --}}
@@ -52,22 +53,22 @@
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
                         <a href="#sobremi" class="nav-link opcionsSidebar active" aria-current="page">
-                            Sobre mi
+                            {{__('messages.sobremi')}}
                         </a>
                     </li>
                     <li>
                         <a href="#elsmeusprojectes" class="nav-link opcionsSidebar link-dark">
-                            Els meus projectes
+                            {{__('messages.elsmeusprojectes')}}
                         </a>
                     </li>
                     <li>
                         <a href="#altreshabilitats" class="nav-link opcionsSidebar link-dark">
-                            Altres habilitats
+                            {{__('messages.altreshabilitats')}}
                         </a>
                     </li>
                     <li>
                         <a href="#contacte" class="nav-link opcionsSidebar link-dark">
-                            Contacte
+                            {{__('messages.contacte')}}
                         </a>
                     </li>
                 </ul>
@@ -89,27 +90,35 @@
             <div class="row" id="sobremi">
 
                 <div class="col-xs-12 col-lg-8">
-                    <h1 class="my-3">Sobre mí</h1>
+                    <h1 class="my-3">{{__('messages.sobremi')}}</h1>
                     <div style="text-align: center">
 
                         <div id="accordion">
                             <div class="card">
                                 <div class="card-header" style="background-color: #d6bda9">
                                     <a class="btn " data-bs-toggle="collapse" href="#collapseOne">
-                                        <b>Soft skills</b>
+                                        <b>{{__('messages.softskills')}}</b>
                                     </a>
                                 </div>
                                 <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
                                     <div class="card-body" style="background-color: #e0fdd5">
-                                      <p class="">Pacient, cuidadós i flexible, <b>el món de la informática
-                                        m'ha interessat desde petit.</b> </p>
+                                      <p class="">{{__('messages.softskills1')}} </p>
 
-                                        <img class="" src="{{ url('img/softskills.webp') }}"
-                                                    style="width: 100%;">
+                                        <img class=""
+
+                                        @if (Config::get('languages')[App::getLocale()] == "Català")
+
+                                             src="{{ url("img/softSkillsCatala.webp")}}"
+                                        @elseif (Config::get('languages')[App::getLocale()] == "Castellano")
+                                            src="{{ url("img/softSkillsCastellano.webp")}}"
+                                        @else
+                                            src="{{ url("img/softSkillsEnglish.webp")}}"
+
+                                        @endif
+                                         style="width: 100%;">
 
 
-                                    <p class="">Em <b>considero bastant versátil</b>, ja que em puc adaptar a
-                                        lo que necessiti l'equip per a que avançin els projectes. </p>
+                                    <p class="">{{__('messages.softskills2')}} </p>
 
                                     </div>
                                 </div>
@@ -118,13 +127,13 @@
                             <div class="card">
                                 <div class="card-header" style="background-color: #d4ad8c">
                                     <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
-                                        <b>Hard skills</b>
+                                        <b>{{__('messages.hardskills')}}</b>
                                     </a>
                                 </div>
                                 <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
                                     <div class="card-body" style="background-color: #c2e2b5">
 
-                                        <p class="">He treballat amb diversos framework com... </p>
+                                        <p class="">{{__('messages.hardskills1')}} </p>
 
                                         <div class="row">
 
@@ -156,17 +165,14 @@
                                         </div>
 
 
-                                        <p class="">Amb els que m'he pogut desenvolupar, <b>tant en front-end
-                                            com en back-end. </b></p>
-                                        <p class="">També he treballat en diverses eines molt importants
-                                            per a ser <b>un expert en llengüatge de marques.</b> </p>
-                                        <p class=""> HTML, CSS i JavaScript, <b>ademés de Bootstrap per a
-                                            complementar-les. </b></p>
+                                        <p class="">{{__('messages.hardskills2')}}</p>
+                                        <p class="">{{__('messages.hardskills3')}}</p>
+                                        <p class="">{{__('messages.hardskills4')}} </p>
 
                                         <img class="" src="{{ url('img/bootstrap.png') }}"
                                             style="width: 60%;">
 
-                                            <p class="mt-5">En quant a bases de dades, tinc pràctica en <b> l'us de MySQL.</b></p>
+                                            <p class="mt-5">{{__('messages.hardskills5')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -192,7 +198,7 @@
             </div>
             <div id="elsmeusprojectes">
 
-                <h1 class="my-3">Els meus projectes</h1>
+                <h1 class="my-3">{{__('messages.elsmeusprojectes')}}</h1>
 
                 <div class="row d-flex justify-content-center">
 
@@ -200,7 +206,7 @@
                     <img id="projecte1" src="{{ url('img/Grabacio1.jpg') }}"
                             style="width:80%;">
 
-                        <p class="px-5"><b>Projecte de simulació de trucades de emergéncia al 112 per el institut Moisés Broggi.</b></p>
+                        <p class="px-5"><b>{{__('messages.elsmeusprojectes1')}}</b></p>
 
 
                 </div>
@@ -208,7 +214,7 @@
                     <img id="projecte2"  src="{{ url('img/Grabacio2.jpg') }}"
                             style="width: 80%;">
 
-                        <p class="px-5"><b>Projecte per a la introducció de la pàgina de portes obertes del Centre d'Estudis Politécnics.</b></p>
+                        <p class="px-5"><b>{{__('messages.elsmeusprojectes2')}}</b></p>
 
 
                 </div>
@@ -216,7 +222,7 @@
                     <img id="projecte3" src="{{ url('img/Grabacio3.jpg') }}"
                             style="width: 80%;">
 
-                        <p class="px-5" ><b>Minijoc com a part del storytelling del transcurs d'un curs al Centre d'Estudis Politécnics</b></p>
+                        <p class="px-5" ><b>{{__('messages.elsmeusprojectes3')}}</b></p>
 
 
                 </div>
@@ -225,7 +231,7 @@
             </div>
             <div class="" id="altreshabilitats">
 
-                <h1 class="my-3">Altres habilitats</h1>
+                <h1 class="my-3">{{__('messages.altreshabilitats')}}</h1>
                 {{--
                 <div class="d-flex justify-content-center ">
                     <video autoplay controls style="width: 50%; height: auto;">
@@ -241,7 +247,7 @@
                 <div class=" d-flex justify-content-center my-2">
                     <video style="height: auto; width:80%;" id="video">
                     <source src="{{ url('img/Proyecto.mp4') }}"  type="video/mp4">
-                    Tu navegador no soporta el video.
+                        {{__('messages.navegadorerror')}}
                     </video>
                 </div>
                 <div class=" d-flex justify-content-center my-2">
@@ -257,7 +263,7 @@
             </div>
             <div class="" id="contacte">
 
-                <h1 class="my-3">Contacte</h1>
+                <h1 class="my-3">{{__('messages.contacte')}}</h1>
                 <div class="row  col-xs-12 col-lg-11" style="text-align: center">
 
 
@@ -290,6 +296,57 @@
 
     </main>
 
+    <div class="modal" id="modalInicio" tabindex="-1" aria-labelledby="modalInicioLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Selecciona una opció</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <div class="col-5 text-center">
+                    <button id="opcion1" type="button" class="btn btn-primary">Wikis</button>
+                    </div>
+                </div>
+                <div class="row my-5 justify-content-evenly">
+                    <div class="col-5 text-center">
+                    <button id="opcion3" type="button" class="btn btn-primary">Fa una bona estona que esperem l'ambulància, on són?</button>
+                    </div>
+                    <div class="col-5 text-center">
+                    <button id="opcion4" type="button" class="btn btn-primary">Hi ha hagut un xoc entre un bus i un cotxe, i el conductor no respon!</button>
+                    </div>
+                </div>
+                <div class="row my-5 justify-content-center">
+                    <div class="col-5 text-center">
+                    <input type="button" class="btn btn-danger" value="Sortir" data-bs-dismiss="modal">
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modalVolver" tabindex="-1" aria-labelledby="modalInicioLabel" aria-hidden="true" data-bs-backdrop="static">
+
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="color:black">Vols escoltar una altra resposta?</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-evenly">
+                    <div class="col-5 text-center">
+                    <button id="opcionSeguir" type="button" class="btn btn-primary">Si, seguir.</button>
+                    </div>
+                    <div class="col-5 text-center">
+                        <input type="button" class="btn btn-danger" value="No, vull tornar." onclick="history.go(-1)">
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 
@@ -300,180 +357,9 @@ integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-<script>
+<script src="{{ url('js/index.js') }}">
 
 
-// Hover al pasar per damunt de l'imatge es reprodueix el gif, i al sortir retorna a la seva posicio original.
-
-
-    let projecte1 = document.getElementById("projecte1");
-
-    projecte1.addEventListener("mouseover", function(){
-        projecte1.src="{{ url('img/Grabacio1.gif') }}";
-    }
-  , false);
-
-  projecte1.addEventListener("mouseout", function(){
-        projecte1.src="{{ url('img/Grabacio1.jpg') }}";
-    }
-  , false);
-
-  let projecte2 = document.getElementById("projecte2");
-
-    projecte2.addEventListener("mouseover", function(){
-        projecte2.src="{{ url('img/Grabacio2.gif') }}";
-    }
-  , false);
-
-  projecte2.addEventListener("mouseout", function(){
-    projecte2.src="{{ url('img/Grabacio2.jpg') }}";
-    }
-  , false);
-
-  let projecte3 = document.getElementById("projecte3");
-
-  projecte3.addEventListener("mouseover", function(){
-    projecte3.src="{{ url('img/Grabacio3.gif') }}";
-    }
-  , false);
-
-  projecte3.addEventListener("mouseout", function(){
-    projecte3.src="{{ url('img/Grabacio3.jpg') }}";
-    }
-  , false);
-
-
-
-  //Funcionalitat de la sidebar.
-
-  let opcionsSidebar = document.getElementsByClassName("opcionsSidebar");
-
-  for (var i= 0; i< opcionsSidebar.length; i++){
-
-
-
-        opcionsSidebar[i].addEventListener("click", function(){
-
-            for (var i2= 0; i2<opcionsSidebar.length; i2++){
-                opcionsSidebar[i2].classList.add("link-dark");
-                opcionsSidebar[i2].classList.remove("active");
-
-            }
-
-            this.classList.add("active");
-            this.classList.remove("link-dark");
-        })
-
-
-
-    }
-
-
-
-    //Funcionalitat del video
-
-    function actionPlay()
-{
-	if(!video.paused && !video.ended)
-	{
-		video.pause();
-		play.value='\u25BA'; //\u25BA
-	}
-	else
-	{
-		video.play();
-		play.value='||';
-	}
-}
-function actionRestart()
-{
-    video.currentTime = 0;
-    video.pause();
-}
-function actionBackward()
-{
-	video.currentTime = video.currentTime - 10;
-}
-function actionForward()
-{
-    video.currentTime = video.currentTime + 10;
-}
-function actionChangeVolume()
-{
-	video.muted = !video.muted;
-
-    if(video.muted)
-	{
-        // 	Para seleccionar un icono, ir a esta pagina https://www.fileformat.info/info/unicode/char/25ba/index.htm y copiar el codigo de "C/C++/Java source code"
-		changevolume.value= '\uD83D\uDD09'; //\u25BA
-	}
-	else
-	{
-		changevolume.value='\uD83D\uDD07'; //\u25BA
-	}
-
-    /*
-
-
-                        <input type="button" class="videobuttons" id="restart" value="&#8634;">
-                        <input type="button" class="videobuttons" id="backward" value="&laquo;">
-                        <input type="button" class="videobuttons" id="play" value="&#9658;">
-                        <input type="button" class="videobuttons" id="forward" value="&raquo;">
-                        <input type="button" class="videobuttons" id="changevolume" value="&#128263;">
-
-    */
-
-
-
-}
-
-	video=document.getElementById('video');
-	play=document.getElementById('play');
-	restart=document.getElementById('restart');
-	backward=document.getElementById('backward');
-	forward=document.getElementById('forward');
-	changevolume=document.getElementById('changevolume');
-
-
-	video.addEventListener('click', actionPlay);
-	play.addEventListener('click', actionPlay);
-	restart.addEventListener('click', actionRestart);
-	backward.addEventListener('click', actionBackward);
-	forward.addEventListener('click', actionForward);
-	changevolume.addEventListener('click', actionChangeVolume);
-
-    /* function progressLoop() {
-        setInterval(function () {
-            var tiempoTotal;
-            progress.value = Math.round((video.currentTime / video.duration) * 100);
-            timer.innerHTML = progress.value + " %";
-
-            if (progress.value < 74) {
-                document.getElementById("tiempo").style.color = "white";
-            }
-            if (progress.value >= 75) {
-                document.getElementById("tiempo").style.color = "#DC3545";
-            }
-
-
-        });
-    }
-    video.addEventListener("play", progressLoop); */
-
-
-
-    /* let boto = document.getElementById("tancarSidebar");
-
-        boto.addEventListener("click",function(){
-
-
-            document.getElementById("sidebar").classList.add("invisible");
-
-            document.getElementById("sidebar").classList.remove("col-3");
-            document.getElementById("sidebar").classList.add("col-0");
-
-
-        }, false); */
 </script>
 
 </html>
