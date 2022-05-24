@@ -18,6 +18,13 @@ return [
     'elsmeusprojectes1' => 'Projecte de simulació de trucades de emergéncia al 112 per el institut Moisés Broggi.',
     'elsmeusprojectes2' => "Projecte per a la introducció de la pàgina de portes obertes del Centre d'Estudis Politécnics.",
     'elsmeusprojectes3' => "Minijoc com a part del storytelling del transcurs d'un curs al Centre d'Estudis Politécnics.",
-    'navegadorerror' => 'El teu navegador no suporta el format de video.'
+    'navegadorerror' => 'El teu navegador no suporta el format de video.',
+    'seleccionaunaopcio' => "Selecciona una opció:",
+    'contingutmultimedia' => "Contingut multimedia",
+    'altresllenguatges' => "Altres llengüatges de Programació",
+    'escoltaraltreopcio' => "Vols escoltar un altre opció?",
+    'si' => "Sí",
+    'no' => "No",
+    'sortir' => "Sortir"
 
 ];

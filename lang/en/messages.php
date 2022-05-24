@@ -18,6 +18,13 @@ return [
     'elsmeusprojectes1' => 'Project about the simulation of emergency calls for the institute Moisés Broggi',
     'elsmeusprojectes2' => "Project about an introduction to the Open Doors event of Centre d'Estudis Politécnics.",
     'elsmeusprojectes3' => "Minigame as a part of storytelling for the development of a course in Centre d'Estudis Politécnics.",
-    'navegadorerror' => 'Tu navegador no soporta el formato del video.'
+    'navegadorerror' => 'Tu navegador no soporta el formato del video.',
+    'seleccionaunaopcio' => "Select an option: ",
+    'contingutmultimedia' => "Media content",
+    'altresllenguatges' => "Other Programming Languages",
+    'escoltaraltreopcio' => "Do you want to listen to another option?",
+    'si' => "Yes",
+    'no' => "No",
+    'sortir' => "Exit"
 
 ];

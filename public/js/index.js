@@ -161,7 +161,7 @@ function iniciar()
 
 
         switch (true) {
-            case (this.currentTime > 19 && this.currentTime < 21):
+            case (this.currentTime > 18 && this.currentTime < 19):
 
                 modalInicial.toggle();
                 this.pause();
@@ -169,9 +169,8 @@ function iniciar()
 
             break;
 
-                case (this.currentTime > 30 && this.currentTime < 31):
-                case (this.currentTime > 40 && this.currentTime < 41):
-                case (this.currentTime > 54 && this.currentTime < 56):
+                case (this.currentTime > 39 && this.currentTime < 40):
+                case (this.currentTime > 61 && this.currentTime < 62):
                 case (this.ended):
                     modalVolver.toggle();
                     this.pause();
@@ -211,17 +210,12 @@ function iniciar()
             },false);
             document.getElementById("opcion2").addEventListener("click", function(){
                 modalInicial.hide();
-                video.currentTime = 33;
+                video.currentTime = 43;
                 video.play();
             },false);
             document.getElementById("opcion3").addEventListener("click", function(){
                 modalInicial.hide();
-                video.currentTime = 42;
-                video.play();
-            },false);
-            document.getElementById("opcion4").addEventListener("click", function(){
-                modalInicial.hide();
-                video.currentTime = 56;
+                video.currentTime = 66;
                 video.play();
             },false);
 

@@ -83,7 +83,7 @@
             <div class="col-12 text-align-center">
                 {{-- Fuente: https://es.vecteezy.com/arte-vectorial/305090-fondo-verde-vector --}}
                 <a href="#sobremi">
-                    <img src="{{ url('img/green-vector-background.webp') }}" style="width: 100%;"> </a>
+                    <img alt="Logo" src="{{ url('img/green-vector-background.webp') }}" style="width: 100%;"> </a>
 
             </div>
 
@@ -104,7 +104,7 @@
                                     <div class="card-body" style="background-color: #e0fdd5">
                                       <p class="">{{__('messages.softskills1')}} </p>
 
-                                        <img class=""
+                                        <img alt="Lista de Softskills" class=""
 
                                         @if (Config::get('languages')[App::getLocale()] == "Català")
 
@@ -140,7 +140,7 @@
 
                                             <div class="col-4">
 
-                                                <img class="" src="{{ url('img/angular.png') }}"
+                                                <img alt="Logo Angular" class="" src="{{ url('img/angular.png') }}"
                                                     style="width: 50%;">
 
                                                 <p class=" p-2">Angular</p>
@@ -148,7 +148,7 @@
                                             </div>
                                             <div class="col-4">
 
-                                                <img class="" src="{{ url('img/laravel.png') }}"
+                                                <img alt="Logo Laravel" class="" src="{{ url('img/laravel.png') }}"
                                                     style="width: 50%;">
 
                                                 <p class=" p-2">Laravel</p>
@@ -156,7 +156,7 @@
                                             </div>
                                             <div class="col-4">
 
-                                                <img class="" src="{{ url('img/vue.webp') }}"
+                                                <img alt="Logo Vue" class="" src="{{ url('img/vue.webp') }}"
                                                     style="width: 50%;">
 
                                                 <p class=" p-2">Vue</p>
@@ -169,7 +169,7 @@
                                         <p class="">{{__('messages.hardskills3')}}</p>
                                         <p class="">{{__('messages.hardskills4')}} </p>
 
-                                        <img class="" src="{{ url('img/bootstrap.png') }}"
+                                        <img alt="Logo HTML + CSS + Javascript" class="" src="{{ url('img/bootstrap.png') }}"
                                             style="width: 60%;">
 
                                             <p class="mt-5">{{__('messages.hardskills5')}}</p>
@@ -184,9 +184,9 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-lg-1">
-                    <img class="d-none d-lg-block" src="{{ url('img/captura1.png') }}">
+                    <img alt="Surto jo en Vertical" class="d-none d-lg-block" src="{{ url('img/captura1.png') }}">
 
-                    <img class=" d-lg-none" src="{{ url('img/captura2.png') }}" style="width: 100%;">
+                    <img  alt="Surto jo en Horitzontal" class=" d-lg-none" src="{{ url('img/captura2.png') }}" style="width: 100%;">
 
 
 
@@ -203,7 +203,7 @@
                 <div class="row d-flex justify-content-center">
 
                 <div class="col-xs-12 col-lg-4" style="text-align: center">
-                    <img id="projecte1" src="{{ url('img/Grabacio1.jpg') }}"
+                    <img alt="Previsualització projecte Broggi" id="projecte1" src="{{ url('img/Grabacio1.jpg') }}"
                             style="width:80%;">
 
                         <p class="px-5"><b>{{__('messages.elsmeusprojectes1')}}</b></p>
@@ -211,7 +211,7 @@
 
                 </div>
                 <div class="col-xs-12 col-lg-4" style="text-align: center">
-                    <img id="projecte2"  src="{{ url('img/Grabacio2.jpg') }}"
+                    <img alt="Previsualització projecte Centre d'Estudis Politecnics" id="projecte2"  src="{{ url('img/Grabacio2.jpg') }}"
                             style="width: 80%;">
 
                         <p class="px-5"><b>{{__('messages.elsmeusprojectes2')}}</b></p>
@@ -219,7 +219,7 @@
 
                 </div>
                 <div class="col-xs-12 col-lg-4" style="text-align: center">
-                    <img id="projecte3" src="{{ url('img/Grabacio3.jpg') }}"
+                    <img alt="Previsualització minijoc Centre d'Estudis Politecnics" id="projecte3" src="{{ url('img/Grabacio3.jpg') }}"
                             style="width: 80%;">
 
                         <p class="px-5" ><b>{{__('messages.elsmeusprojectes3')}}</b></p>
@@ -232,21 +232,11 @@
             <div class="" id="altreshabilitats">
 
                 <h1 class="my-3">{{__('messages.altreshabilitats')}}</h1>
-                {{--
-                <div class="d-flex justify-content-center ">
-                    <video autoplay controls style="width: 50%; height: auto;">
-                    <source src="{{ url('img/Proyecto.mp4') }}" type="video/mp4">
-                    Tu navegador no soporta el video.
-                    </video>
-
-
-
-                </div> --}}
 
 
                 <div class=" d-flex justify-content-center my-2">
                     <video style="height: auto; width:80%;" id="video">
-                    <source src="{{ url('img/Proyecto.mp4') }}"  type="video/mp4">
+                    <source src="{{ url('img/VideoInteractivo.mp4') }}"  type="video/mp4">
                         {{__('messages.navegadorerror')}}
                     </video>
                 </div>
@@ -271,7 +261,7 @@
                     <div class="col-xs-12 col-lg-6" >
                         <a href="https://www.linkedin.com/in/victor-soriano-calder%C3%B3n-0a22a6229">
 
-                        <img id="projecte1" src="{{ url('img/linkedin.png') }}"
+                        <img alt="Logo Linkedin" id="projecte1" src="{{ url('img/linkedin.png') }}"
                             style="width: 50%;">
 
                         <p class=" p-2">LinkedIn</p>
@@ -281,7 +271,7 @@
                     <div class="col-xs-12 col-lg-6 ">
                         <a href="https://github.com/VSorianoABC123">
 
-                        <img id="projecte2" src="{{ url('img/github.png') }}"
+                        <img alt="Logo GitHub" id="projecte2" src="{{ url('img/github.png') }}"
                             style="width: 50%;">
 
                         <p class=" p-2">GitHub</p>
@@ -296,11 +286,12 @@
 
     </main>
 
+    {{-- Modales Video Interactivo --}}
     <div class="modal" id="modalInicio" tabindex="-1" aria-labelledby="modalInicioLabel" aria-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Selecciona una opció</h5>
+              <h5 class="modal-title">{{__('messages.seleccionaunaopcio')}}</h5>
             </div>
             <div class="modal-body">
                 <div class="row justify-content-center">
@@ -310,15 +301,16 @@
                 </div>
                 <div class="row my-5 justify-content-evenly">
                     <div class="col-5 text-center">
-                    <button id="opcion3" type="button" class="btn btn-primary">Fa una bona estona que esperem l'ambulància, on són?</button>
+                    <button id="opcion2" type="button" class="btn btn-primary">{{__('messages.contingutmultimedia')}}</button>
                     </div>
                     <div class="col-5 text-center">
-                    <button id="opcion4" type="button" class="btn btn-primary">Hi ha hagut un xoc entre un bus i un cotxe, i el conductor no respon!</button>
+                    <button id="opcion3" type="button" class="btn btn-primary">{{__('messages.altresllenguatges')}}</button>
                     </div>
                 </div>
                 <div class="row my-5 justify-content-center">
                     <div class="col-5 text-center">
-                    <input type="button" class="btn btn-danger" value="Sortir" data-bs-dismiss="modal">
+
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('messages.sortir')}}</button>
                     </div>
                 </div>
             </div>
@@ -331,15 +323,15 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" style="color:black">Vols escoltar una altra resposta?</h5>
+                <h5 class="modal-title" style="color:black">{{__('messages.escoltaraltreopcio')}}</h5>
             </div>
             <div class="modal-body">
                 <div class="row justify-content-evenly">
                     <div class="col-5 text-center">
-                    <button id="opcionSeguir" type="button" class="btn btn-primary">Si, seguir.</button>
+                    <button id="opcionSeguir" type="button" class="btn btn-primary">{{__('messages.si')}}</button>
                     </div>
                     <div class="col-5 text-center">
-                        <input type="button" class="btn btn-danger" value="No, vull tornar." onclick="history.go(-1)">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('messages.no')}}</button>
                     </div>
                 </div>
             </div>
