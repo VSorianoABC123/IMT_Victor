@@ -203,26 +203,32 @@
                 <div class="row d-flex justify-content-center">
 
                 <div class="col-xs-12 col-lg-4" style="text-align: center">
+                    <a href="https://github.com/DanielMoreno2021/2rProjecteDAW2b2122">
                     <img alt="Previsualització projecte Broggi" id="projecte1" src="{{ url('img/Grabacio1.jpg') }}"
                             style="width:80%;">
 
                         <p class="px-5"><b>{{__('messages.elsmeusprojectes1')}}</b></p>
-
+                    </a>
 
                 </div>
                 <div class="col-xs-12 col-lg-4" style="text-align: center">
+
+                    <a href="https://github.com/VSorianoABC123/1rProjecteDAW2b2122">
                     <img alt="Previsualització projecte Centre d'Estudis Politecnics" id="projecte2"  src="{{ url('img/Grabacio2.jpg') }}"
                             style="width: 80%;">
 
                         <p class="px-5"><b>{{__('messages.elsmeusprojectes2')}}</b></p>
+                    </a>
 
 
                 </div>
-                <div class="col-xs-12 col-lg-4" style="text-align: center">
+                <div class="col-xs-12 col-lg-4" style="text-align: center" >
+                    <a href="https://github.com/VSorianoABC123/1rProjecteDAW2b2122/tree/main/games/Turnflip">
                     <img alt="Previsualització minijoc Centre d'Estudis Politecnics" id="projecte3" src="{{ url('img/Grabacio3.jpg') }}"
                             style="width: 80%;">
 
                         <p class="px-5" ><b>{{__('messages.elsmeusprojectes3')}}</b></p>
+                    </a>
 
 
                 </div>
@@ -310,7 +316,7 @@
                 <div class="row my-5 justify-content-center">
                     <div class="col-5 text-center">
 
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('messages.sortir')}}</button>
+                        <button type="button" class="btn btn-secondary" onclick="history.go();">{{__('messages.sortir')}}</button>
                     </div>
                 </div>
             </div>
@@ -331,7 +337,8 @@
                     <button id="opcionSeguir" type="button" class="btn btn-primary">{{__('messages.si')}}</button>
                     </div>
                     <div class="col-5 text-center">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('messages.no')}}</button>
+
+                        <button type="button" class="btn btn-secondary" onclick="history.go();">{{__('messages.no')}}</button>
                     </div>
                 </div>
             </div>
